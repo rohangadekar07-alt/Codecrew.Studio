@@ -1,31 +1,25 @@
-import styles from './PosterBackground.module.css';
+'use client';
+
+import styles from './HeroSection.module.css';
 
 const HeroSection = () => {
   return (
-    <div className={styles['poster-container']}>
-      {/* 
-        We are only adding these subtle overlays to animate the EXISTING lines 
-        in the background image, as requested. No extra random elements.
-      */}
-
-      {/* Moving Dotted Line: Left Side, Middle */}
-      <div className={`${styles['animated-dotted-line']} ${styles['line-horizontal-left']}`}></div>
-
-      {/* Moving Dotted Line: Right Side */}
-      <div className={`${styles['animated-dotted-line']} ${styles['line-horizontal-right']}`}></div>
-
-      {/* Moving Dotted Line: Vertical Top Left */}
-      <div className={`${styles['animated-dotted-line-vertical']} ${styles['line-vertical-top-1']}`}></div>
-
-      {/* Moving Dotted Line: Vertical Top Right */}
-      <div className={`${styles['animated-dotted-line-vertical']} ${styles['line-vertical-top-2']}`}></div>
-
-      {/* The rest of the content (Text/Logo) is part of the image, 
-          so we don't overlay HTML text unless the user wants it editable.
-          The user said: "take this image and use same everything... add animation but for same image"
-          This implies the image serves as the full UI. 
-      */}
-    </div>
+    <section className={styles.hero}>
+      <div className={styles.heroBgLogo}></div>
+      <div className={styles['hero-content']}>
+        <h1>CodeCrew Studios</h1>
+        <p>Your One-Stop Solution for Web Apps, Mobile Apps, ML Projects & More<br />
+          Affordable Prices • Deployed Solutions • Student-Friendly</p>
+        <div className={styles['cta-buttons']}>
+          <a href="#services" className={`${styles.btn} ${styles['btn-primary']}`}>
+            Explore Services
+          </a>
+          <a href="#contact" className={`${styles.btn} ${styles['btn-secondary']}`}>
+            Get in Touch
+          </a>
+        </div>
+      </div>
+    </section>
   );
 };
 

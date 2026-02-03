@@ -3,6 +3,9 @@
 import { useEffect } from 'react';
 import styles from './LandingPage.module.css';
 
+import Navbar from './Navbar';
+import HeroSection from './HeroSection';
+
 const LandingPage = () => {
     useEffect(() => {
         // Scroll animation observer - triggers every time
@@ -35,11 +38,7 @@ const LandingPage = () => {
         const handleScroll = () => {
             const scrolled = window.pageYOffset;
 
-            // Parallax for hero section
-            const hero = document.querySelector(`.${styles.hero}`);
-            if (hero) {
-                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-            }
+
 
             // Subtle parallax for sections
             const sections = document.querySelectorAll(`.${styles.services}, .${styles.projects}, .${styles.features}`);
@@ -64,37 +63,12 @@ const LandingPage = () => {
     return (
         <div className={styles['landing-page']}>
             {/* Navbar */}
-            <nav className={styles.navbar}>
-                <div className={styles['navbar-container']}>
-                    <div className={styles['navbar-logo']}>
-                        <img src="/logo.jpg" alt="CodeCrew Studio" className={styles['logo-img']} />
-                        <span className={styles['logo-text']}>CodeCrew Studio</span>
-                    </div>
-                    <div className={styles['navbar-links']}>
-                        <a href="#services">Services</a>
-                        <a href="#projects">Projects</a>
-                        <a href="#features">Why Us</a>
-                        <a href="#contact">Contact</a>
-                    </div>
-                </div>
-            </nav>
+            {/* Navbar */}
+            <Navbar />
 
             {/* Hero Section */}
-            <section className={styles.hero}>
-                <div className={styles['hero-content']}>
-                    <h1>CodeCrew Studio</h1>
-                    <p>Your One-Stop Solution for Web Apps, Mobile Apps, ML Projects & More<br />
-                        Affordable Prices • Deployed Solutions • Student-Friendly</p>
-                    <div className={styles['cta-buttons']}>
-                        <a href="#services" className={`${styles.btn} ${styles['btn-primary']}`}>
-                            Explore Services
-                        </a>
-                        <a href="#contact" className={`${styles.btn} ${styles['btn-secondary']}`}>
-                            Get in Touch
-                        </a>
-                    </div>
-                </div>
-            </section>
+            {/* Hero Section */}
+            <HeroSection />
 
             {/* Services Section */}
             <section className={styles.services} id="services">

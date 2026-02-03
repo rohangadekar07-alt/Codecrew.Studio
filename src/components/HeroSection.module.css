@@ -1,327 +1,152 @@
-/* Layout & Container */
-.tech-bg {
+/* Hero Section */
+.hero {
   position: relative;
   width: 100%;
-  height: 100vh;
-  background-color: #050a1f;
-  /* Deep blue from poster */
-  background-image:
-    radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 0) 0%, #020617 80%);
-  overflow: hidden;
+  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   align-items: center;
-  padding: 40px 20px;
-  font-family: 'Segoe UI', sans-serif;
-  color: #fff;
+  justify-content: center;
+  text-align: center;
+  padding: 6rem 2rem 4rem 2rem;
+  /* Combined padding */
+  overflow: visible;
 }
 
-/* Background Animation Layer (Grid & Circuits) */
-.grid-overlay {
+.hero::before {
+  content: '';
+  display: none;
+}
+
+.hero::after {
+  content: '';
   position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(0, 234, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 234, 255, 0.03) 1px, transparent 1px);
-  background-size: 50px 50px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(30, 58, 138, 0.4) 0%, #0f172a 100%);
   z-index: 1;
+  pointer-events: none;
 }
 
-/* Animated Lines */
-.circuit-line {
+.heroBgLogo {
   position: absolute;
-  background: linear-gradient(90deg, transparent, #00eaff, transparent);
-  height: 1px;
-  width: 150px;
-  opacity: 0;
-  box-shadow: 0 0 5px #00eaff;
-  z-index: 2;
-  animation: moveHorizontal 7s linear infinite;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 700px;
+  background-image: url('/hero-bg-logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.35;
+  z-index: 0;
+  animation: logoFloat 6s ease-in-out infinite;
+  pointer-events: none;
 }
 
-.vertical-line {
-  position: absolute;
-  background: linear-gradient(180deg, transparent, #00eaff, transparent);
-  width: 1px;
-  height: 150px;
-  opacity: 0;
-  box-shadow: 0 0 5px #00eaff;
-  z-index: 2;
-  animation: moveVertical 9s linear infinite;
-}
-
-/* Dots & Squares */
-.glowing-dot {
-  position: absolute;
-  width: 3px;
-  height: 3px;
-  background: #fff;
-  border-radius: 50%;
-  box-shadow: 0 0 8px #00eaff;
-  animation: floatDot 12s infinite ease-in-out;
-  z-index: 2;
-}
-
-.square-particle {
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  border: 1px solid rgba(0, 234, 255, 0.5);
-  animation: pulseSquare 3s infinite alternate;
-  z-index: 2;
-}
-
-/* Animations */
-@keyframes moveHorizontal {
-  0% {
-    transform: translateX(-100px) scaleX(0.5);
-    opacity: 0;
-  }
-
-  20% {
-    opacity: 1;
-  }
-
-  90% {
-    opacity: 1;
-  }
-
-  100% {
-    transform: translateX(110vw) scaleX(1);
-    opacity: 0;
-  }
-}
-
-@keyframes moveVertical {
-  0% {
-    transform: translateY(-100px) scaleY(0.5);
-    opacity: 0;
-  }
-
-  20% {
-    opacity: 1;
-  }
-
-  90% {
-    opacity: 1;
-  }
-
-  100% {
-    transform: translateY(110vh) scaleY(1);
-    opacity: 0;
-  }
-}
-
-@keyframes floatDot {
+@keyframes logoFloat {
 
   0%,
   100% {
-    transform: translate(0, 0);
-    opacity: 0.3;
+    margin-top: 0;
+    filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.3));
   }
 
   50% {
-    transform: translate(20px, -20px);
-    opacity: 1;
+    margin-top: -20px;
+    filter: drop-shadow(0 0 35px rgba(59, 130, 246, 0.5));
   }
 }
 
-@keyframes pulseSquare {
-  0% {
-    transform: scale(1);
-    opacity: 0.3;
+@keyframes logoSpin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
   }
 
-  100% {
-    transform: scale(1.5);
-    opacity: 0.8;
-    background: rgba(0, 234, 255, 0.2);
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }
 
-/* === MAIN CONTENT (Z-Index 10) === */
-
-/* Top Section: Title */
-.title-container {
-  z-index: 10;
-  margin-top: 40px;
-  text-align: center;
-  animation: slideDown 1s ease-out;
-}
-
-.main-title {
-  font-size: clamp(2rem, 5vw, 4.5rem);
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  background: linear-gradient(180deg, #ffffff 0%, #bde6ff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 15px rgba(0, 234, 255, 0.5));
-  margin: 0;
-}
-
-/* Center Section: Logo & Services */
-.center-content {
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  flex-grow: 1;
-  width: 100%;
-}
-
-.logo-container {
-  margin-bottom: 40px;
-  animation: zoomIn 1.2s ease-out;
-}
-
-/* Simple CSS construction of a 'Wrench/C' logo to match poster vibe */
-.logo-icon {
-  width: 120px;
-  height: 120px;
+.hero-content {
   position: relative;
-  /* Using a mask approach for a clean icon, or just an SVG in JS */
+  max-width: 1200px;
+  animation: fadeInUp 1s ease-out;
+  z-index: 2;
 }
 
-.services-text {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  animation: fadeIn 1.5s ease-out 0.5s backwards;
+.logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 2rem;
+  filter: drop-shadow(0 0 20px rgba(56, 189, 248, 0.5));
 }
 
-.service-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-  font-size: clamp(1.2rem, 3vw, 2.2rem);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+.hero h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 800;
+  background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
 }
 
-.separator {
-  width: 2px;
-  height: 1.5em;
-  background-color: #f59e0b;
-  /* Golden/Orange accent from typical posters, or use Teal */
-  background: linear-gradient(180deg, transparent, #00eaff, transparent);
-}
-
-.tagline {
-  margin-top: 20px;
-  font-size: 1.2rem;
-  font-weight: 400;
-  color: #e2e8f0;
-  letter-spacing: 1px;
-  animation: fadeInUp 1.5s ease-out 1s backwards;
-}
-
-/* Bottom Section: Footer Info */
-.footer-container {
-  z-index: 10;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  padding: 0 40px;
-  margin-bottom: 20px;
-  animation: slideUp 1s ease-out 1.2s backwards;
-}
-
-.qr-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-}
-
-.qr-box {
-  width: 80px;
-  height: 80px;
-  background: white;
-  padding: 5px;
-  border-radius: 4px;
-}
-
-.qr-text {
-  font-size: 0.7rem;
-  letter-spacing: 1px;
+.hero p {
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
   color: #cbd5e1;
+  margin-bottom: 3rem;
+  line-height: 1.6;
 }
 
-.contact-section {
+.cta-buttons {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 10px;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.contact-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.btn {
+  padding: 1rem 2.5rem;
   font-size: 1.1rem;
   font-weight: 600;
-  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
 }
 
-/* Helper Animations */
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-50px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.btn-primary {
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  color: white;
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
 }
 
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4);
 }
 
-@keyframes zoomIn {
-  from {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+.btn-secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid #60a5fa;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+.btn-secondary:hover {
+  background: rgba(96, 165, 250, 0.1);
+  transform: translateY(-3px);
 }
 
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
 
   to {
@@ -330,27 +155,99 @@
   }
 }
 
-/* Responsive adjustments */
+/* Responsive Design */
+/* Tablets */
 @media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column-reverse;
-    /* Stack on mobile */
-    align-items: center;
-    gap: 20px;
+  .hero {
+    padding: 1.5rem;
+    padding-top: 5rem;
+    min-height: 90vh;
   }
 
-  .contact-section {
-    align-items: center;
+  .hero::before {
+    background-size: 50%;
   }
 
-  .service-row {
+  .logo {
+    width: 100px;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 {
+    margin-bottom: 1.25rem;
+  }
+
+  .hero p {
+    margin-bottom: 2.5rem;
+  }
+
+  .cta-buttons {
+    gap: 1rem;
+  }
+
+  .btn {
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 640px) {
+  .hero {
+    padding: 1rem;
+    padding-top: 4.5rem;
+    min-height: 85vh;
+  }
+
+  .hero::before {
+    background-size: 40%;
+  }
+
+  .logo {
+    width: 80px;
+    margin-bottom: 1rem;
+  }
+
+  .hero h1 {
+    margin-bottom: 1rem;
+  }
+
+  .hero p {
+    margin-bottom: 2rem;
+    padding: 0 0.5rem;
+  }
+
+  .cta-buttons {
     flex-direction: column;
-    gap: 5px;
+    align-items: stretch;
+    gap: 0.75rem;
   }
 
-  .separator {
-    display: none;
+  .btn {
+    width: 100%;
+    padding: 0.85rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .hero {
+    padding: 0.75rem;
+    padding-top: 4rem;
   }
 
-  /* Hide vertical separator on mobile stack */
+  .logo {
+    width: 70px;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    padding: 0;
+  }
+
+  .btn {
+    padding: 0.8rem 1.25rem;
+    font-size: 0.9rem;
+  }
 }
