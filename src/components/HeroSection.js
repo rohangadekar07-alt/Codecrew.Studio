@@ -4,7 +4,7 @@ import styles from './HeroSection.module.css';
 
 const HeroSection = () => {
   return (
-    <section className={styles.hero}>
+    <section className={styles.hero} id="hero">
       <div className={styles.heroBgLogo}></div>
       <div className={styles['hero-content']}>
         <h1>CodeCrew Studios</h1>

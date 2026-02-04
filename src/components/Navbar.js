@@ -11,6 +11,7 @@ const Navbar = () => {
                     <span className={styles['logo-text']}>CodeCrew Studios</span>
                 </div>
                 <div className={styles['navbar-links']}>
+                    <a href="#hero">Home</a>
                     <a href="#services">Services</a>
                     <a href="#projects">Projects</a>
                     <a href="#features">Why Us</a>

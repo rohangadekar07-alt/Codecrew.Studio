@@ -3,6 +3,24 @@
 import styles from './Contact.module.css';
 
 const Contact = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const data = Object.fromEntries(formData.entries());
+
+        const subject = `Project Inquiry from ${data.name}`;
+        const body = `Name: ${data.name}
+Email: ${data.email}
+Phone: ${data.phone}
+Service: ${data.service}
+
+Message:
+${data.message}`;
+
+        const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=codecrewstudio.info@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.open(gmailUrl, '_blank');
+    };
+
     return (
         <section className={styles.contact} id="contact">
             <div className={styles.container}>
@@ -19,7 +37,7 @@ const Contact = () => {
                             <p>Fill out the form and we'll get back to you within 24 hours</p>
                         </div>
 
-                        <form className={styles['contact-form']}>
+                        <form className={styles['contact-form']} onSubmit={handleSubmit}>
                             <div className={styles['form-group']}>
                                 <label htmlFor="name">Your Name</label>
                                 <input
@@ -101,7 +119,7 @@ const Contact = () => {
                         <div className={styles['info-card']}>
                             <div className={styles['info-icon']}>✉️</div>
                             <h4>Email Us</h4>
-                            <p><a href="mailto:info@codecrewstudio.com">info@codecrewstudio.com</a></p>
+                            <p><a href="mailto:codecrewstudio.info@gmail.com">codecrewstudio.info@gmail.com</a></p>
                             <p className={styles['info-detail']}>We reply within 24 hours</p>
                         </div>
 
