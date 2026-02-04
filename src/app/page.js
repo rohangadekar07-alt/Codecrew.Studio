@@ -10,6 +10,7 @@ import Features from '@/components/Features';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import ScrollReveal from '@/components/ScrollReveal';
+import ReadyToDeploy from '@/components/ReadyToDeploy';
 
 export default function Home() {
   return (
@@ -26,6 +27,9 @@ export default function Home() {
       </ScrollReveal>
       <ScrollReveal>
         <Projects />
+      </ScrollReveal>
+      <ScrollReveal>
+        <ReadyToDeploy />
       </ScrollReveal>
       <ScrollReveal>
         <Features />
