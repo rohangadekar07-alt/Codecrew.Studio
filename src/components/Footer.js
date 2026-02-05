@@ -8,7 +8,7 @@ const Footer = () => {
             <div className={styles.container}>
                 <div className={styles.topSection}>
                     <div className={styles.brandColumn}>
-                        <h2 className={styles.logoText}>CodeCrew Studios</h2>
+                        <h2 className={styles.logoText}>CodeCrew Studio</h2>
                         <p className={styles.brandDesc}>
                             Transforming ideas into digital reality. We build accessible, high-performance web and mobile solutions for students and businesses.
                         </p>
@@ -105,7 +105,7 @@ const Footer = () => {
                 </div>
 
                 <div className={styles.bottomSection}>
-                    <p>&copy; {new Date().getFullYear()} CodeCrew Studios. All rights reserved.</p>
+                    <p>&copy; {new Date().getFullYear()} CodeCrew Studio. All rights reserved.</p>
                     <div className={styles.legalLinks}>
                         <a href="/privacy">Privacy Policy</a>
                         <a href="/terms">Terms of Service</a>

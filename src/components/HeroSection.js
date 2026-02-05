@@ -7,7 +7,7 @@ const HeroSection = () => {
     <section className={styles.hero} id="hero">
       <div className={styles.heroBgLogo}></div>
       <div className={styles['hero-content']}>
-        <h1>CodeCrew Studios</h1>
+        <h1>CodeCrew Studio</h1>
         <p>Your One-Stop Solution for Web Apps, Mobile Apps, ML Projects & More<br />
           Affordable Prices • Deployed Solutions • Student-Friendly</p>
         <div className={styles['cta-buttons']}>

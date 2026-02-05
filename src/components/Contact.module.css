@@ -3,7 +3,12 @@
     position: relative;
     width: 100%;
     padding: 6rem 2rem;
-    background: linear-gradient(180deg, #0f172a 0%, #172554 100%);
+    /* Navy Blue to Sky Blue gradient (matching Products section) */
+    background: linear-gradient(180deg, #0f172a 0%, #0ea5e9 100%);
+}
+
+:global([data-theme='light']) .contact {
+    background: linear-gradient(180deg, #ffffff 0%, #60a5fa 100%);
 }
 
 
@@ -24,7 +29,7 @@
 
 .section-subtitle {
     text-align: center;
-    color: #94a3b8;
+    color: var(--text-muted);
     font-size: 1.2rem;
     margin-bottom: 4rem;
 }
@@ -40,10 +45,10 @@
 }
 
 .contact-form-container {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    background: var(--bg-section-gradient);
     padding: 3rem;
     border-radius: 20px;
-    border: 1px solid rgba(96, 165, 250, 0.1);
+    border: 1px solid var(--border-light);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
@@ -58,7 +63,7 @@
 }
 
 .form-header p {
-    color: #94a3b8;
+    color: var(--text-muted);
     font-size: 0.95rem;
 }
 
@@ -75,7 +80,7 @@
 }
 
 .form-group label {
-    color: #cbd5e1;
+    color: var(--text-secondary);
     font-weight: 500;
     font-size: 0.95rem;
 }
@@ -84,10 +89,10 @@
 .form-group select,
 .form-group textarea {
     padding: 0.9rem 1.2rem;
-    background: rgba(30, 41, 59, 0.5);
-    border: 1px solid rgba(96, 165, 250, 0.2);
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
     border-radius: 10px;
-    color: white;
+    color: var(--text-primary);
     font-size: 1rem;
     font-family: inherit;
     transition: all 0.3s ease;
@@ -98,13 +103,13 @@
 .form-group textarea:focus {
     outline: none;
     border-color: #60a5fa;
-    background: rgba(30, 41, 59, 0.8);
+    background: var(--bg-card-hover);
     box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1);
 }
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-    color: #64748b;
+    color: var(--text-muted);
 }
 
 .form-group textarea {
@@ -154,18 +159,18 @@
 }
 
 .info-card {
-    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    background: var(--bg-section-gradient);
     padding: 2rem;
     border-radius: 15px;
-    border: 1px solid rgba(96, 165, 250, 0.1);
+    border: 1px solid var(--border-light);
     transition: all 0.3s ease;
     text-align: center;
 }
 
 .info-card:hover {
-    border-color: rgba(96, 165, 250, 0.3);
+    border-color: var(--border-hover);
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+    box-shadow: var(--shadow-card);
 }
 
 .info-icon {
@@ -181,13 +186,13 @@
 }
 
 .info-card p {
-    color: #cbd5e1;
+    color: var(--text-secondary);
     margin-bottom: 0.3rem;
     font-size: 1rem;
 }
 
 .info-card a {
-    color: #cbd5e1;
+    color: var(--text-secondary);
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -197,7 +202,7 @@
 }
 
 .info-detail {
-    color: #94a3b8 !important;
+    color: var(--text-muted) !important;
     font-size: 0.85rem !important;
     margin-top: 0.5rem;
 }
