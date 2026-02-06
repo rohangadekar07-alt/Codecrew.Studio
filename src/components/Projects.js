@@ -1,8 +1,55 @@
 'use client';
 
+import { useRef, useEffect } from 'react';
 import styles from './Projects.module.css';
 
 const Projects = () => {
+    const videoRef = useRef(null);
+    const videoRef2 = useRef(null);
+    const videoRef3 = useRef(null);
+
+    useEffect(() => {
+        const refs = [videoRef, videoRef2, videoRef3];
+
+        // Set playback rates
+        if (videoRef.current) videoRef.current.playbackRate = 1.0;
+        if (videoRef2.current) videoRef2.current.playbackRate = 2.0;
+        if (videoRef3.current) videoRef3.current.playbackRate = 1.3;
+
+        // Intersection Observer for auto-play on scroll
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    // Find the video element associated with this entry
+                    const video = entry.target;
+
+                    if (entry.isIntersecting) {
+                        video.play().catch(err => {
+                            console.log('Auto-play prevented:', err);
+                        });
+                    } else {
+                        video.pause();
+                    }
+                });
+            },
+            { threshold: 0.2 } // Play when 20% of video is visible
+        );
+
+        refs.forEach(ref => {
+            if (ref.current) {
+                observer.observe(ref.current);
+            }
+        });
+
+        return () => {
+            refs.forEach(ref => {
+                if (ref.current) {
+                    observer.unobserve(ref.current);
+                }
+            });
+        };
+    }, []);
+
     return (
         <section className={styles.projects} id="projects">
             <div className={styles.container}>
@@ -16,11 +63,15 @@ const Projects = () => {
                     <div className={styles['project-card']}>
                         <div className={styles['video-container']}>
                             <video
+                                ref={videoRef}
                                 className={styles['project-video']}
-                                controls
-                                poster="/project-placeholder.jpg"
+                                autoPlay
+                                muted
+                                loop
+                                playsInline
+                                preload="auto"
                             >
-                                <source src="/videos/project1.mp4" type="video/mp4" />
+                                <source src="/Tourist.mp4" type="video/mp4" />
                                 Your browser does not support the video tag.
                             </video>
                         </div>
@@ -39,11 +90,15 @@ const Projects = () => {
                     <div className={styles['project-card']}>
                         <div className={styles['video-container']}>
                             <video
+                                ref={videoRef2}
                                 className={styles['project-video']}
-                                controls
-                                poster="/project-placeholder.jpg"
+                                autoPlay
+                                muted
+                                loop
+                                playsInline
+                                preload="auto"
                             >
-                                <source src="/videos/project2.mp4" type="video/mp4" />
+                                <source src="/AdoptBuddy.mp4" type="video/mp4" />
                                 Your browser does not support the video tag.
                             </video>
                         </div>
@@ -62,11 +117,15 @@ const Projects = () => {
                     <div className={styles['project-card']}>
                         <div className={styles['video-container']}>
                             <video
+                                ref={videoRef3}
                                 className={styles['project-video']}
-                                controls
-                                poster="/project-placeholder.jpg"
+                                autoPlay
+                                muted
+                                loop
+                                playsInline
+                                preload="auto"
                             >
-                                <source src="/videos/project3.mp4" type="video/mp4" />
+                                <source src="/FitnessGenes.mp4" type="video/mp4" />
                                 Your browser does not support the video tag.
                             </video>
                         </div>

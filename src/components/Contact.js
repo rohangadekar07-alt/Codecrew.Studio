@@ -1,6 +1,7 @@
 'use client';
 
 import styles from './Contact.module.css';
+import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 
 const Contact = () => {
     const handleSubmit = (e) => {
@@ -103,28 +104,36 @@ ${data.message}`;
                     {/* Contact Info Cards */}
                     <div className={styles['contact-info-cards']}>
                         <div className={styles['info-card']}>
-                            <div className={styles['info-icon']}>📍</div>
+                            <div className={styles['info-icon']}>
+                                <MapPin className={styles.icon} />
+                            </div>
                             <h4>Visit Us</h4>
                             <p>Pune, Maharashtra</p>
                             <p className={styles['info-detail']}>India</p>
                         </div>
 
                         <div className={styles['info-card']}>
-                            <div className={styles['info-icon']}>📞</div>
+                            <div className={styles['info-icon']}>
+                                <Phone className={styles.icon} />
+                            </div>
                             <h4>Call Us</h4>
                             <p><a href="tel:9688420767">9688420767</a></p>
                             <p><a href="tel:9767857776">9767857776</a></p>
                         </div>
 
                         <div className={styles['info-card']}>
-                            <div className={styles['info-icon']}>✉️</div>
+                            <div className={styles['info-icon']}>
+                                <Mail className={styles.icon} />
+                            </div>
                             <h4>Email Us</h4>
                             <p><a href="mailto:codecrewstudio.info@gmail.com">codecrewstudio.info@gmail.com</a></p>
                             <p className={styles['info-detail']}>We reply within 24 hours</p>
                         </div>
 
                         <div className={styles['info-card']}>
-                            <div className={styles['info-icon']}>⏰</div>
+                            <div className={styles['info-icon']}>
+                                <Clock className={styles.icon} />
+                            </div>
                             <h4>Working Hours</h4>
                             <p>Mon - Fri: 10 AM - 7 PM</p>
                             <p className={styles['info-detail']}>Saturday - Sunday: By Appointment</p>

@@ -12,7 +12,14 @@ const SpecialOffer = () => {
                     Get <strong>exclusive discounts</strong> on all projects during May & June!<br />
                     Perfect timing for your final year submissions.
                 </p>
-                <a href="#contact" className={`${styles.btn} ${styles['btn-primary']}`}>
+                <a
+                    href="#contact"
+                    className={`${styles.btn} ${styles['btn-primary']}`}
+                    onClick={(e) => {
+                        e.preventDefault();
+                        document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                >
                     Claim Your Offer
                 </a>
             </div>

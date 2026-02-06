@@ -1,6 +1,7 @@
 'use client';
 
 import styles from './Features.module.css';
+import { Wallet, Rocket, BookOpen, Zap, Headset, ShieldCheck } from 'lucide-react';
 
 const Features = () => {
     return (
@@ -10,37 +11,49 @@ const Features = () => {
 
                 <div className={styles['features-grid']}>
                     <div className={styles['feature-item']}>
-                        <div className={styles['feature-icon']}>💰</div>
+                        <div className={styles['feature-icon']}>
+                            <Wallet />
+                        </div>
                         <h3>Affordable Pricing</h3>
                         <p>Student-friendly rates without compromising quality</p>
                     </div>
 
                     <div className={styles['feature-item']}>
-                        <div className={styles['feature-icon']}>🚀</div>
+                        <div className={styles['feature-icon']}>
+                            <Rocket />
+                        </div>
                         <h3>Deployed Solutions</h3>
                         <p>Get working deployed links, not just source code</p>
                     </div>
 
                     <div className={styles['feature-item']}>
-                        <div className={styles['feature-icon']}>📚</div>
+                        <div className={styles['feature-icon']}>
+                            <BookOpen />
+                        </div>
                         <h3>Complete Documentation</h3>
                         <p>Detailed documentation and project reports included</p>
                     </div>
 
                     <div className={styles['feature-item']}>
-                        <div className={styles['feature-icon']}>⚡</div>
+                        <div className={styles['feature-icon']}>
+                            <Zap />
+                        </div>
                         <h3>Fast Delivery</h3>
                         <p>Quick turnaround time for urgent projects</p>
                     </div>
 
                     <div className={styles['feature-item']}>
-                        <div className={styles['feature-icon']}>🛠️</div>
+                        <div className={styles['feature-icon']}>
+                            <Headset />
+                        </div>
                         <h3>Post-Delivery Support</h3>
                         <p>Free support and bug fixes after delivery</p>
                     </div>
 
                     <div className={styles['feature-item']}>
-                        <div className={styles['feature-icon']}>✅</div>
+                        <div className={styles['feature-icon']}>
+                            <ShieldCheck />
+                        </div>
                         <h3>Quality Assured</h3>
                         <p>Tested, optimized, and production-ready code</p>
                     </div>

@@ -61,6 +61,16 @@
 .feature-icon {
     font-size: 3rem;
     margin-bottom: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #60a5fa;
+}
+
+.feature-icon svg {
+    width: 1em;
+    height: 1em;
+    stroke-width: 1.5;
 }
 
 .feature-item h3 {
