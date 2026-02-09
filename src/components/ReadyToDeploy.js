@@ -5,25 +5,25 @@ import styles from './ReadyToDeploy.module.css';
 const displayProducts = [
     {
         id: 1,
-        title: 'E-Commerce Starter Kit',
-        description: 'A complete full-stack e-commerce solution with admin dashboard, payment gateway integration, and order management.',
+        title: 'Inventory & Billing Management System',
+        description: 'A web-based system that helps small shops or businesses manage products, stock, suppliers, and billing. Admins can track inventory levels, generate invoices, and monitor sales reports.',
         techStack: ['Next.js', 'Node.js', 'MongoDB', 'Stripe'],
         price: '₹2,499',
         icon: '🛍️'
     },
     {
         id: 2,
-        title: 'Restaurant Management System',
-        description: 'Digital menu, QR ordering, kitchen display system (KDS), and inventory tracking for modern restaurants.',
+        title: 'Gym Management System',
+        description: 'The Gym Management System is a web-based application designed to help gym administrators efficiently manage members, trainers, memberships, payments, and attendance in a centralized platform.',
         techStack: ['React', 'Firebase', 'Tailwind'],
         price: '₹3,999',
-        icon: '🍽️'
+        icon: '🏋️'
     },
     {
         id: 3,
-        title: 'School ERP System',
-        description: 'Comprehensive school management software for attendance, fees, exams, and student tracking.',
-        techStack: ['PHP/Laravel', 'MySQL', 'Bootstrap'],
+        title: 'Student Course & Attendance Management System',
+        description: 'A web-based platform for colleges or coaching institutes to manage student records, course enrollments, attendance, and performance tracking.',
+        techStack: ['React', 'MySQL', 'Bootstrap', 'Redis'],
         price: '₹4,999',
         icon: '🏫'
     }

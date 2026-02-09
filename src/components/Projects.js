@@ -76,8 +76,8 @@ const Projects = () => {
                             </video>
                         </div>
                         <div className={styles['project-info']}>
-                            <h3>E-Commerce Web App</h3>
-                            <p>Full-stack online shopping platform with payment integration</p>
+                            <h3>Local Travel Agency</h3>
+                            <p>Full-stack project base on Travel agency company,Tourist Mangement System</p>
                             <div className={styles['project-tags']}>
                                 <span>React</span>
                                 <span>Node.js</span>
@@ -103,12 +103,12 @@ const Projects = () => {
                             </video>
                         </div>
                         <div className={styles['project-info']}>
-                            <h3>Mobile Fitness App</h3>
-                            <p>Cross-platform fitness tracking application with AI recommendations</p>
+                            <h3>Pet Adoption Platform</h3>
+                            <p>A web application where users can adopt pets, list pets for adoption, and contact pet owners or shelters</p>
                             <div className={styles['project-tags']}>
                                 <span>React Native</span>
-                                <span>ML</span>
-                                <span>Firebase</span>
+                                <span>Exprees.js</span>
+                                <span>WebSokects</span>
                             </div>
                         </div>
                     </div>
@@ -130,12 +130,13 @@ const Projects = () => {
                             </video>
                         </div>
                         <div className={styles['project-info']}>
-                            <h3>ML Prediction System</h3>
-                            <p>Machine learning model for stock price prediction with dashboard</p>
+                            <h3>Gym Management System</h3>
+                            <p>A web-based system that helps gyms manage members, trainers, memberships, and payments.</p>
                             <div className={styles['project-tags']}>
-                                <span>Python</span>
-                                <span>TensorFlow</span>
-                                <span>Flask</span>
+                                <span>React.js
+                                </span>
+                                <span>Node.js + Express.js</span>
+                                <span>PostgreSQL</span>
                             </div>
                         </div>
                     </div>
