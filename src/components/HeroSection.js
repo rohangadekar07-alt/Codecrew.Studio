@@ -19,6 +19,12 @@ const HeroSection = () => {
           </a>
         </div>
       </div>
+
+      <div className={styles['scroll-indicator']}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </section>
   );
 };
