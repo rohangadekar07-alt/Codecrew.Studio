@@ -83,9 +83,6 @@ const Footer = () => {
                         <h3>Contact Us</h3>
                         <p>Pune, Maharashtra, India</p>
                         <p><a href="mailto:codecrewstudio.info@gmail.com">codecrewstudio.info@gmail.com</a></p>
-                        <p><a href="tel:+919689420767">+91 96894 20767</a></p>
-                        <p><a href="tel:+919767805776">+91 97678 05776</a></p>
-
                     </div>
                 </div>
 
